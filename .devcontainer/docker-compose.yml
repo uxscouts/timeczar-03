@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  php-apache:
+    image: php:8.2-apache
+    container_name: php-apache
+    ports:
+      - "80:80"
+    volumes:
+      - ..:/workspace:cached
+    working_dir: /workspace
+    environment:
+      - APACHE_DOCUMENT_ROOT=/workspaces/timeczar-03/backend
+    command: /bin/sh -c "chown -R www-data:www-data /workspaces && apache2-foreground"
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: my_database
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
