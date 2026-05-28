@@ -5,21 +5,25 @@ services:
     image: php:8.2-apache
     container_name: php-apache
     ports:
-      - "80:80"
+      - "8080:8080"
     volumes:
       - ..:/workspace:cached
-    working_dir: /workspace
+    working_dir: /workspaces/timeczar-03
     environment:
       - APACHE_DOCUMENT_ROOT=/workspaces/timeczar-03/backend
     command: /bin/sh -c "chown -R www-data:www-data /workspaces && apache2-foreground"
 
+
   mysql:
     image: mysql:8.0
+    command: sleep infinity 
     container_name: mysql-db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: my_database
+      MYSQL_USER: rootuser
+      MYSQL_DATABASE: mydatabase
+      MYSQL_PASSWORD: mysqlpassword
     ports:
       - "3306:3306"
     volumes:
