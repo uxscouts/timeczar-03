@@ -1,8 +1,8 @@
 {
-  "name": "RPMS-07",
+  "name": "TIMECZAR-03",
   "hostRequirements": {
-    "cpus": 8,
-    "memory": "16gb"
+    "cpus": 2,
+    "memory": "8gb"
   },
   "dockerComposeFile": "../docker-compose.yml",
   "service": "backend",
