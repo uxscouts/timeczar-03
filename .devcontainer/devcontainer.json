@@ -1,9 +1,5 @@
 {
   "name": "TIMECZAR-03",
-  "hostRequirements": {
-    "cpus": 2,
-    "memory": "8gb"
-  },
   "dockerComposeFile": "../docker-compose.yml",
   "service": "backend",
   "workspaceFolder": "/workspace",
