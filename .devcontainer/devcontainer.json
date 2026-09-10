@@ -39,8 +39,5 @@
       ]
     }
   },
-  "remoteEnv": {
-    "GITHUB_CODESPACES": "${localEnv:CODESPACES}"
-  },
   "postStartCommand": "git config --global --add safe.directory /workspace"
 }
