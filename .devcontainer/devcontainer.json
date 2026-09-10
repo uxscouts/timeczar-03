@@ -2,17 +2,20 @@
   "name": "TIMECZAR-03",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "backend",
-  "workspaceFolder": "/workspace",
+  // CHANGED: Matches the folder path inside your backend container
+  "workspaceFolder": "/var/www/html", 
+  
+  "runServices": [
+    "backend",
+    "frontend",
+    "mysql"
+  ],
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest",
-      "moby": false
-    },
     "ghcr.io/devcontainers/features/node:1": {
       "version": "lts"
     }
   },
-  "forwardPorts": [],
+  "forwardPorts":,
   "portsAttributes": {
     "5173": {
       "label": "React Frontend (Vite)",
@@ -39,5 +42,5 @@
       ]
     }
   },
-  "postStartCommand": "git config --global --add safe.directory /workspace"
+  "postStartCommand": "git config --global --add safe.directory /var/www/html"
 }
