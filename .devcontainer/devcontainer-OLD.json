@@ -3,7 +3,6 @@
   "name": "TIMECZAR-03",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "backend",
-  // CHANGED: Matches the folder path inside your backend container
   "workspaceFolder": "/var/www/html", 
   
   "runServices": [
